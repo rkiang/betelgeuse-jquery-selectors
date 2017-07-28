@@ -9,9 +9,12 @@ $(document).ready(function() {
     $('#chief').css('color', 'green');
     // $('#kevin li:last-child').css('color', 'black'); //$('ul:first li:last-child) works the same
     $('ul').first().children().last().css('color', 'black'); //done with methods of jQuery selector
-
+    var counter = 0;
+            // when the button is clicked
     $('#kevinNewFavorite').on('click', function(){
-        console.log('button was clicked');
-        
+            // make the counter go up by one
+        counter++;
+            //log that counter
+        console.log('button was clicked',counter,'times');
     });
 });
