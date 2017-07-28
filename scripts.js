@@ -21,11 +21,21 @@ $(document).ready(function() {
         // $('#kevin').append('<li>Lightsabers</li>');
         
         var favoriteThing = $('input').val();
-        $('#kevin').append('<li>' + favoriteThing + '</li>');
+        $('#kevin').append('<li>' + favoriteThing + ' <button class="deleteFavorite">Remove Item</button></li>');
         //Input text should be added to the list
     });
+
     $('#brendtNewFavorite').on('click', function() {
         var brendtFavoriteThing = $('#brendtNewFavoriteInput').val();
-        $('#brendt').append('<li>' + brendtFavoriteThing + '</li>');
+        $('#brendt').append('<li>' + brendtFavoriteThing + ' <button class="deleteFavorite">Remove Item</button></li>');
+    });
+
+    $('#kevin, #brendt').on('click', '.deleteFavorite', function() {
+        // '.deleteFavorite  will check what else is clicked on after the page loads, because it wasn't on the DOM when it loaded
+        console.log('delete button was clicked: ', $(this));
+        // $(this) refers to the thing that was clicked on
+        $(this).parent().remove();
+        //$(this) starts at the button, .parent() is the thing that we select to .remove()
+        // $(this).parent().parent().remove() will the whole list, can keep chain them up
     });
 });
