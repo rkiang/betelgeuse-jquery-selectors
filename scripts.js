@@ -18,6 +18,14 @@ $(document).ready(function() {
         // console.log('button was clicked',counter,'times');
         
         // Lightsabers should be added to the list
-        $('#kevin').append('<li>Lightsabers</li>');
+        // $('#kevin').append('<li>Lightsabers</li>');
+        
+        var favoriteThing = $('input').val();
+        $('#kevin').append('<li>' + favoriteThing + '</li>');
+        //Input text should be added to the list
+    });
+    $('#brendtNewFavorite').on('click', function() {
+        var brendtFavoriteThing = $('#brendtNewFavoriteInput').val();
+        $('#brendt').append('<li>' + brendtFavoriteThing + '</li>');
     });
 });
